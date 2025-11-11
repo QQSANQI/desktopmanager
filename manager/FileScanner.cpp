@@ -1,11 +1,18 @@
 #include "FileScanner.h"
+using namespace std;
 
-string FileScanner::getALLFiles()//遍历所有文件
+fs::path FileScanner::getALLFiles()//遍历所有文件
 {
-    return string();
+    fs::path desktopPath;
+	cout << "目录内容" << endl;
+    for (const auto& entry : desktopPath)
+    {
+		cout << entry.path() << endl;
+    }
+    return fs::path();
 }
 
-string FileScanner::getFilesByType()//分类获取文件
+fs::path FileScanner::getFilesByType()//分类获取文件
 {
-    return string();
+    return fs::path();
 }
