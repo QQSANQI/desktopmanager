@@ -13,9 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\shared">
+      <UniqueIdentifier>{201c1931-62f3-498f-86c2-13358cc0d395}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\shared\config">
+      <UniqueIdentifier>{d1ac1b2c-b2bc-4d25-a946-d8c202273559}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="file_categories.json">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileScanner.cpp">
@@ -25,6 +34,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CategoryRules.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="jsonconfig_loader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -37,6 +52,15 @@
     </ClInclude>
     <ClInclude Include="CategoryRules.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Types&amp;Rules.h">
+      <Filter>头文件\shared\config</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonconfig_loader.h">
+      <Filter>头文件\shared\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\json.hpp">
+      <Filter>头文件\shared\config</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

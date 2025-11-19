@@ -1,17 +1,23 @@
-#pragma once
+ï»¿#pragma once
 #include <filesystem>
 #include <vector>
 #include <string>
 #include<iostream>
+#include "Types&Rules.h"
 using namespace std;
-namespace fs = std::filesystem; // ÎÄ¼şÏµÍ³¿â
+namespace fs = std::filesystem; // æ–‡ä»¶ç³»ç»Ÿåº“
 
-// Ä£¿é1£ºÎÄ¼şÉ¨ÃèÆ÷ - ¸ºÔğ»ñÈ¡×ÀÃæÎÄ¼şĞÅÏ¢
+// æ¨¡å—1ï¼šæ–‡ä»¶æ‰«æå™¨ - è´Ÿè´£è·å–æ¡Œé¢æ–‡ä»¶ä¿¡æ¯
 class FileScanner {
 public:
-	fs::path& desktopPath;//×ÀÃæÂ·¾¶
-	std::vector<fs::path> getAllFiles(const fs::path& desktopPath);//±éÀúËùÓĞÎÄ¼ş£¬·µ»ØÎÄ¼şÂ·¾¶ÁĞ±í
-	std::vector<fs::path> getFilesByType(const std::string& extension);//·ÖÀà»ñÈ¡ÎÄ¼ş£¬·µ»ØÖ¸¶¨ÀàĞÍµÄÎÄ¼şÂ·¾¶ÁĞ±í
+	fs::path desktopPath;//æ¡Œé¢è·¯å¾„
+	CategoryRule fileObj;//æ–‡ä»¶å¯¹è±¡
+	//åˆ†ç±»è·å–æ–‡ä»¶ï¼Œè¿”å›æŒ‡å®šç±»å‹çš„æ–‡ä»¶è·¯å¾„åˆ—è¡¨
+	std::vector<fs::path> getFilesByType(const string& extension);
+	FileScanner(const fs::path& desktopPath);
+	std::vector<fs::path> getAllFiles(const fs::path& desktopPath);
 private:
-   
+	//éå†æ‰€æœ‰
+	
+	//CategoryRule callFile(const vector<fs::path>& filepaths);//è·å–å•ä¸ªæ–‡ä»¶ä¿¡æ¯
 };

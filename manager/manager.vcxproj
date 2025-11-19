@@ -125,17 +125,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="file_categories.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CategoryRules.cpp" />
     <ClCompile Include="FileCLassifier.cpp" />
     <ClCompile Include="FileScanner.cpp" />
+    <ClCompile Include="jsonconfig_loader.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Downloads\json.hpp" />
     <ClInclude Include="CategoryRules.h" />
     <ClInclude Include="FileCLassifier.h" />
     <ClInclude Include="FileScanner.h" />
+    <ClInclude Include="jsonconfig_loader.h" />
+    <ClInclude Include="Types&amp;Rules.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

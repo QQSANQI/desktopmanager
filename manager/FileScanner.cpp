@@ -1,15 +1,19 @@
-#include "FileScanner.h"
+ï»¿#include "FileScanner.h"
 using namespace std;
-/*¼ÙÉè´«ÈëµÄÂ·¾¶ÕıÈ·
-ÎÒ²»¹Ü£¬±ØĞëÕıÈ·
+/*å‡è®¾ä¼ å…¥çš„è·¯å¾„æ­£ç¡®
+æˆ‘ä¸ç®¡ï¼Œå¿…é¡»æ­£ç¡®
 */
-std::vector<fs::path> FileScanner::getAllFiles(const fs::path& desktopPath)//±éÀúËùÓĞÎÄ¼ş£¬·µ»ØÎÄ¼şÂ·¾¶ÁĞ±í
+FileScanner::FileScanner(const fs::path& desktoppath)//æ„é€ å‡½æ•°ï¼Œä¼ å…¥æ¡Œé¢è·¯å¾„
+{
+	this->desktopPath = desktoppath;
+}
+std::vector<fs::path> FileScanner::getAllFiles(const fs::path& desktopPath)//éå†æ‰€æœ‰æ–‡ä»¶ï¼Œè¿”å›æ–‡ä»¶è·¯å¾„åˆ—è¡¨
 {
 	vector<fs::path> allFiles;
-	//±éÀúdesktopPathÄ¿Â¼ÏÂµÄËùÓĞÎÄ¼şºÍÎÄ¼ş¼Ğ
-	if (!fs::exists(desktopPath))//Â·¾¶²»´æÔÚ£¬±¨´í
+	//éå†desktopPathç›®å½•ä¸‹çš„æ‰€æœ‰æ–‡ä»¶å’Œæ–‡ä»¶å¤¹
+	if (!fs::exists(desktopPath))//è·¯å¾„ä¸å­˜åœ¨ï¼ŒæŠ¥é”™
 		{
-			cout << "Â·¾¶²»´æÔÚ" << endl;
+			cout << "è·¯å¾„ä¸å­˜åœ¨" << endl;
 			return std::vector<fs::path>();
 		}
 	else 
@@ -21,8 +25,16 @@ std::vector<fs::path> FileScanner::getAllFiles(const fs::path& desktopPath)//±éÀ
 		return allFiles;
 		}
 }
+//CategoryRule FileScanner::callFile(const vector<fs::path>& filepaths)//æ ¹æ®è·¯å¾„è¿”å›å•ä¸ªæ–‡ä»¶ä¿¡æ¯
+//{
+//	for(size_t i=0;i <filepaths.size();i++){}
+//	fileObj.extension.push_back( filepaths[i].extension().string());//è·å–æ‰©å±•å
+//	fileObj.category = "æœªçŸ¥ç±»åˆ«";//é»˜è®¤ç±»åˆ«
+//	fileObj.targetPath = "";//é»˜è®¤ç›®æ ‡è·¯å¾„ä¸ºç©º
+//	return fileObj;
+//}
 
-std::vector<fs::path> FileScanner::getFilesByType(const std::string& extension)//·ÖÀà»ñÈ¡ÎÄ¼ş£¬·µ»ØÖ¸¶¨ÀàĞÍµÄÎÄ¼şÂ·¾¶ÁĞ±í
+vector<fs::path> FileScanner::getFilesByType(const std::string& extension)//åˆ†ç±»è·å–æ–‡ä»¶ï¼Œè¿”å›æŒ‡å®šç±»å‹çš„æ–‡ä»¶è·¯å¾„åˆ—è¡¨ï¼ˆå®Œæˆï¼‰
 {
 	vector<fs::path> filesByType;
 	try {
@@ -34,11 +46,11 @@ std::vector<fs::path> FileScanner::getFilesByType(const std::string& extension)/
 		}
 		if(filesByType.size()==0)
 		{
-			throw runtime_error("Î´ÕÒµ½¸ÃÀàĞÍÎÄ¼ş");
+			throw runtime_error("æœªæ‰¾åˆ°è¯¥ç±»å‹æ–‡ä»¶");
 		}
 	}
 	catch (const runtime_error& e) {
-		cerr << "´íÎó: " << e.what() << endl;
-	}//Î´ÕÒµ½¾Í±¨´í£¬´ËÊ±·µ»Ø¿ÕÊı×é
+		cerr << "é”™è¯¯: " << e.what() << endl;
+	}//æœªæ‰¾åˆ°å°±æŠ¥é”™ï¼Œæ­¤æ—¶è¿”å›ç©ºæ•°ç»„
 	return filesByType;
 }

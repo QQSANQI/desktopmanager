@@ -1,0 +1,43 @@
+﻿{
+  "version": "1.0",
+  "default_category": "默认规则",
+  "base_directory": "默认路径",
+  "categories": [
+    {
+      "name": "图像",
+      "folder": "Images",
+      "extensions": [ ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".svg" ],
+      "enabled": true
+    },
+    {
+      "name": "文档",
+      "folder": "Documents",
+      "extensions": [ ".pdf", ".doc", ".docx", ".txt", ".md", ".rtf", ".ppt", ".pptx", ".xls", ".xlsx" ],
+      "enabled": true
+    },
+    {
+      "name": "压缩包",
+      "folder": "Archives",
+      "extensions": [ ".zip", ".rar", ".7z", ".tar", ".gz", ".bz2" ],
+      "enabled": true
+    },
+    {
+      "name": "媒体",
+      "folder": "Media",
+      "extensions": [ ".mp4", ".avi", ".mkv", ".mov", ".mp3", ".wav", ".flac", ".aac" ],
+      "enabled": true
+    },
+    {
+      "name": "代码",
+      "folder": "Code",
+      "extensions": [ ".cpp", ".h", ".py", ".java", ".js", ".html", ".css", ".json", ".xml" ],
+      "enabled": true
+    },
+    {
+      "name": "可执行文件",
+      "folder": "Executables",
+      "extensions": [ ".exe", ".msi", ".bat", ".sh", ".app" ],
+      "enabled": true
+    }
+  ]
+}
