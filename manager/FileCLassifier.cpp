@@ -26,6 +26,7 @@ void FileCLassifier::classFile(const vector<fs::path>& filePath, const fs::path&
 				try
 				{
 					fs::rename(file, targetPath);//冲突时可能报错，待添加处理机制
+					cout << "Moved file " << file << " to " << targetPath << std::endl;
 				}
 				catch (fs::filesystem_error& e)
 				{

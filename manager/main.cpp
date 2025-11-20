@@ -2,6 +2,7 @@
 #include "FileScanner.h"
 #include "FileCLassifier.h"
 #include "jsonconfig_loader.h"
+#include "json.hpp"
 using namespace std;
 
 int main()

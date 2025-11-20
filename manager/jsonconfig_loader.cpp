@@ -27,10 +27,11 @@ vector<CategoryRule> JsonConfigLoader::configloader(const fs::path& configloc)//
 			rule.extension = exts;
 			rule.category = name;
 			rule.targetPath = objpath;
+			rules.push_back(rule);
 		}
 	}
 
-	rules.push_back(rule);
+	
 	return rules;
 }
 /*配置写入器，实现：
