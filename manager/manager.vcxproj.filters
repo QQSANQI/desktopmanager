@@ -33,9 +33,6 @@
     <ClCompile Include="FileCLassifier.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CategoryRules.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="jsonconfig_loader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -50,16 +47,10 @@
     <ClInclude Include="FileCLassifier.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="CategoryRules.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Types&amp;Rules.h">
-      <Filter>头文件\shared\config</Filter>
-    </ClInclude>
     <ClInclude Include="jsonconfig_loader.h">
       <Filter>头文件\shared\config</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\json.hpp">
+    <ClInclude Include="json.hpp">
       <Filter>头文件\shared\config</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include<iostream>
+#include <unordered_map>
 #include "Types&Rules.h"
 using namespace std;
 namespace fs = std::filesystem;
@@ -15,7 +16,7 @@ public:
 	bool Is_classed = false;
 	//已经分类的文件string列表
 	vector<fs::path>ClassedFiles;
-	void classFile(const vector<fs::path>& filePath, const fs::path& rulePath);//分类文件
+	void classFile(const vector<fs::path>& filePath, const fs::path& rulePath,const fs::path &storePath);//分类文件
 	bool result() const;//返回是否分类完成
 private:
 

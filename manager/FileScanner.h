@@ -3,7 +3,6 @@
 #include <vector>
 #include <string>
 #include<iostream>
-#include "Types&Rules.h"
 using namespace std;
 namespace fs = std::filesystem; // 文件系统库
 
@@ -11,7 +10,6 @@ namespace fs = std::filesystem; // 文件系统库
 class FileScanner {
 public:
 	fs::path desktopPath;//桌面路径
-	CategoryRule fileObj;//文件对象
 	//分类获取文件，返回指定类型的文件路径列表
 	std::vector<fs::path> getFilesByType(const string& extension);
 	FileScanner(const fs::path& desktopPath);

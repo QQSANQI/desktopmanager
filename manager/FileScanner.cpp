@@ -13,14 +13,17 @@ std::vector<fs::path> FileScanner::getAllFiles(const fs::path& desktopPath)//遍
 	//遍历desktopPath目录下的所有文件和文件夹
 	if (!fs::exists(desktopPath))//路径不存在，报错
 		{
-			cout << "路径不存在" << endl;
+			cerr << "路径不存在" << endl;
 			return std::vector<fs::path>();
 		}
 	else 
 		{
-		for (const auto& entry : fs::directory_iterator(fs::absolute(desktopPath)))
+		for (const auto& entry : fs::recursive_directory_iterator(desktopPath))
 			{
-				allFiles.push_back(entry.path());
+				if (entry.is_regular_file())
+				{
+					allFiles.push_back(entry.path());
+				}
 			}
 		return allFiles;
 		}
@@ -33,8 +36,8 @@ std::vector<fs::path> FileScanner::getAllFiles(const fs::path& desktopPath)//遍
 //	fileObj.targetPath = "";//默认目标路径为空
 //	return fileObj;
 //}
-
-vector<fs::path> FileScanner::getFilesByType(const std::string& extension)//分类获取文件，返回指定类型的文件路径列表（完成）
+//分类获取文件，返回指定类型的文件路径列表（完成）
+vector<fs::path> FileScanner::getFilesByType(const std::string& extension)
 {
 	vector<fs::path> filesByType;
 	try {
