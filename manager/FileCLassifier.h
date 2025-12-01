@@ -4,7 +4,6 @@
 #include <string>
 #include<iostream>
 #include <unordered_map>
-#include "Types&Rules.h"
 using namespace std;
 namespace fs = std::filesystem;
 class FileCLassifier
@@ -21,8 +20,3 @@ public:
 private:
 
 };
-//class ConfigLoader
-//{
-//	bool loadConfig(const fs::path& configPath, vector<CategoryRule>& rules);//加载配置文件，返回是否成功
-//	string GetGoalPath(const fs::file_type& filextension);//根据类别获取目标路径
-//};

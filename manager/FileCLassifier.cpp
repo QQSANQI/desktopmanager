@@ -2,7 +2,6 @@
 #include "FileCLassifier.h"
 #include "jsonconfig_loader.h"
 /*完成了基本按规则分类功能,但是嵌套太多*/
-JsonConfigLoader balabala;
 bool FileCLassifier::result() const{return Is_classed;}
 //分类函数；参数：文件路径列表，规则路径；s
 void FileCLassifier::classFile(const vector<fs::path>& filePath, const fs::path& rulePath, const fs::path &storePath)
@@ -19,7 +18,7 @@ void FileCLassifier::classFile(const vector<fs::path>& filePath, const fs::path&
 
 			std::string ext = item.extension().string();
 			auto it = map1.find(ext);
-			fs::path dir = (it != map1.end()) ? storePath / it->second : storePath / u8"Others";
+			fs::path dir = (it != map1.end()) ? storePath / it->second : storePath / u8"其他";
 
 			fs::create_directories(dir);
 			fs::path target = dir / item.filename();

@@ -22,5 +22,5 @@ public:
 	int extsnum();
 	unordered_map<string,string> configloader(const fs::path& configloc);
 	//写入客户端配置文件
-	void configwriter(const fs::path& config_to, string name, string objpath, vector<string> exts);
+	void configwriter(const fs::path& config_to,const string& name,const string& objpath,const vector<string>& exts);
 };

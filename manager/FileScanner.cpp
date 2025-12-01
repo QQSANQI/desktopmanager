@@ -28,14 +28,6 @@ std::vector<fs::path> FileScanner::getAllFiles(const fs::path& desktopPath)//遍
 		return allFiles;
 		}
 }
-//CategoryRule FileScanner::callFile(const vector<fs::path>& filepaths)//根据路径返回单个文件信息
-//{
-//	for(size_t i=0;i <filepaths.size();i++){}
-//	fileObj.extension.push_back( filepaths[i].extension().string());//获取扩展名
-//	fileObj.category = "未知类别";//默认类别
-//	fileObj.targetPath = "";//默认目标路径为空
-//	return fileObj;
-//}
 //分类获取文件，返回指定类型的文件路径列表（完成）
 vector<fs::path> FileScanner::getFilesByType(const std::string& extension)
 {

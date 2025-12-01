@@ -34,7 +34,7 @@ unordered_map<string,string> JsonConfigLoader::configloader(const fs::path& conf
 
 	string text = ReadFileStripUtf8BOM(configloc);
 	if (text.empty()) {
-		std::cerr << "无法打开，空的配置文件: " << configloc << std::endl;
+		std::cerr << "无法打开空的配置文件: " << configloc << std::endl;
 	}
 
 	try {
@@ -71,7 +71,7 @@ unordered_map<string,string> JsonConfigLoader::configloader(const fs::path& conf
 
 /*配置写入器，实现：
 检查目录下customconfig.json是否存在，不存在则创建，将客户输入的配置信息写入*/
-void configwriter(const fs::path& config_to, string name, string objpath, vector<string> exts)
+void JsonConfigLoader::configwriter(const fs::path& config_to,const string& name,const string& objpath,const vector<string>& exts)
 {
 	if (!fs::exists(config_to / "customconfig.json"))
 	{
